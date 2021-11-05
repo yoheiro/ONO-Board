@@ -1,10 +1,18 @@
 # ONO-Board
+オノマトペを利用した第3のインターフェース
+# 環境
 version
 win10
 python3.7
 pip 21.3
 pipenv 2021.5.29
+#使用ライブラリ
+speechrecognition
+pyaudio
+pyautogui
+tkinter
 
+#ファイルについて
 
 ono.py
 ・mainfile
