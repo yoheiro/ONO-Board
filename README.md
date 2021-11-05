@@ -12,7 +12,7 @@ pyaudio
 pyautogui
 tkinter
 
-#ファイルについて
+#　ファイルについて
 
 ono.py
 ・mainfile
