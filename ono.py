@@ -59,7 +59,6 @@ def recognition():#音声認識スタート
             #login実装したい
             #userplofileをすべて取ってくる
             if currentUser =="高木":
-               print("succsess")
                break
             else :
                 print("もう一度だ...")
@@ -94,7 +93,6 @@ def setmode(loginUserdata):
             currentmode = text
             print(text+"!!!!!!!!!!")
             if currentmode in loginUserdata['mode']:
-               print("succsess") 
                global currentBind
                currentBind = loginUserdata['mode'][currentmode]
                print(currentBind)
@@ -134,15 +132,14 @@ def BindLisner(User,mode):
                 currentBind = None
                 recognition()
                 setmode(loginUserdata)
-            elif text == "モード変更": 
-                print("モード変更")
+            elif text == "モード 変更": 
+                print("モード 変更")
                 currentmode="default"
                 currentBind = None
                 setmode(loginUserdata)
             elif text in currentBind:
-                print(text)
                 setOnomatope(currentBind,text)
-            print(currentBind)
+            print(currentBind.keys())
 
 def setOnomatope(modex,text):
     #バインドマッチング

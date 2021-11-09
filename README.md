@@ -6,11 +6,15 @@ win10
 python3.7
 pip 21.3
 pipenv 2021.5.29
+
 #使用ライブラリ
 speechrecognition
 pyaudio
 pyautogui
-tkinter
+
+slenium
+requests
+//tkinter
 
 # ファイルについて
 
