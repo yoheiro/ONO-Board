@@ -24,7 +24,7 @@ https://drive.google.com/drive/folders/1BE0vC6DhTQsoLjsTalNQvQSDJ9yBX9Zo?usp=sha
 
 ２’、macユーザ、Windowsユーザで動かなかった人は上記のライブラリをPIP　installしてono.oyを実行
 
-#How TO USE
+# How TO USE
 
 １、ユーザー名を言う（現在、”高木”のみ使用可能）
 
