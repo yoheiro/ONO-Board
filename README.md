@@ -17,7 +17,7 @@ requests
 //tkinter
 
 # How To Use
-https://1drv.ms/u/s!AmX-A9pjI25igdd00NeUBtBWCteKeA?e=ju1T86
+https://drive.google.com/drive/folders/1BE0vC6DhTQsoLjsTalNQvQSDJ9yBX9Zo?usp=sharing
 
 １、上記のファイルをダウンロード
 
