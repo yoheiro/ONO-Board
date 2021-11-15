@@ -161,6 +161,3 @@ def addBind():
     btn_register.pack()#操作登録ボタン表示
 
     root.mainloop()#ウインドウ表示  
-
-#設定 メソッド呼び出し＝関数実行
-addBind()
