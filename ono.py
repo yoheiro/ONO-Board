@@ -3,8 +3,19 @@ import pyautogui
 import time
 import tkinter as tk
 import addGUI
+import pickle
 
 
+
+
+def saveCSV(saveData):
+    with open('data.json', 'wb') as fp:
+        pickle.dump(saveData, fp)
+    
+def loadCSV():
+    with open('data.json', 'rb') as fp:
+        newdata = pickle.load(fp)
+    return newdata
 user_data = [{'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{'hotkey':['ctrl','c']},{'write':'hallow'}],
                                                     'ジャバジャバ':[{'write':'    public static void main(String[] args) {'},{'press':'enter'},{'write':'     System.out.println("Hello World");  }'}]},
                                     'デスクトップ':{'ペタペタ':[],
@@ -26,14 +37,15 @@ user_data = [{'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{
                                     }
             }            
             ]
-        #ログイン後取得予定データの例
-loginUserdata={'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{'hotkey':['ctrl','c']},{'write':'hallow'}],
+resetdata={'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{'hotkey':['ctrl','c']},{'write':'hallow'}],
                                                     'ジャバジャバ':[{'write':'    public static void main(String[] args) {'},{'press':'enter'},{'write':'     System.out.println("Hello World"); '},{'press':'enter'},{'write':'    }'}]},
                                     'デスクトップ':{'ペタペタ':[],
                                                     'じゃばじゃば':[]
                                                     }
                                     }
              }
+        #ログイン後取得予定データの例
+loginUserdata=loadCSV()
 currentUser='admin'
 currentmode="default"
 currentBind = None
@@ -63,6 +75,8 @@ def recognition():#音声認識スタート
             #userplofileをすべて取ってくる
             if currentUser =="高木":
                break
+            elif currentUser=="リセット":
+                saveCSV(resetdata)
             else :
                 print("もう一度だ...")
                 
@@ -104,6 +118,7 @@ def setmode(loginUserdata):
             elif text == "モード 登録":
                 
                 loginUserdata = addGUI.addMode(loginUserdata)
+                saveCSV(loginUserdata)
                 print(loginUserdata)
             else :
                 print("もう一度だ...")
@@ -150,6 +165,7 @@ def BindLisner(User,mode):
                 loginUserData=loginUserdata
                 loginUserdata = addGUI.addBind(loginUserData,currentmode)
                 currentBind = loginUserdata['mode'][currentmode]
+                saveCSV(loginUserdata)
             elif text in currentBind:
                 setOnomatope(currentBind,text)
             print(currentBind.keys())
@@ -168,8 +184,6 @@ def keyPushFunc(listx):
             pyautogui.write(k['write'])
         elif 'press' in k:
             pyautogui.press(k['press'])
-
-
 
 
 #設定

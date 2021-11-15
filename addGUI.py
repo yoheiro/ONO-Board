@@ -31,7 +31,6 @@ def getOnomatope():
 
 def addBind(loginUserdata,currentmode):
     
-    print("バインド登録")
     
     autoFillSet = {} #write + テキスト　→addListに入れる
     keySet = {} #hotkey + キー　→addListに入れる
@@ -174,7 +173,7 @@ def addMode(loginUserdata):
     
     print("モード名を言って下さい")
     text = getOnomatope()
-    newMode = {text:None}
+    newMode = {text:{}}
     loginUserdata['mode'].update(newMode)
     print(loginUserdata['mode'])
     return loginUserdata
