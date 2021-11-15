@@ -16,14 +16,10 @@ slenium
 requests
 //tkinter
 
-# ファイルについて
-
-ono.py
-・mainfile
-
-pipfile
-pipfile.lock
-・pipenv用ファイル
-
-run.bat : wim用コマンド　'py -m pipenv run python ono.oy'
-setup.py  : py2exe用セットアップファイル
+# How To Use
+https://1drv.ms/u/s!AmX-A9pjI25igdd00NeUBtBWCteKeA?e=ju1T86
+１、上記のファイルをダウンロード
+２，ono.を実行
+３、ユーザー名を言う（現在、”高木”,”村田”,"吉田"のみ使用可能）
+４、既存のモードを言うことでキーマッピングを選ぶもしくは”モード登録”といい、その後モード名を言うことで新しいモード登録
+５、登録したオノマトペを言うもしくは”オノマトペ登録”でキーマッピングを追加、実行する。
