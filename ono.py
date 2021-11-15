@@ -149,7 +149,6 @@ def BindLisner(User,mode):
             elif text == "オノマトペ 登録":
                 loginUserData=loginUserdata
                 loginUserdata = addGUI.addBind(loginUserData,currentmode)
-                print(loginUserdata)
                 currentBind = loginUserdata['mode'][currentmode]
             elif text in currentBind:
                 setOnomatope(currentBind,text)
@@ -173,39 +172,6 @@ def keyPushFunc(listx):
 
 
 
-    
-# def addBind():
-    
-    # print("バインド登録")
-    # root = tk.Tk()
-    # root.title(u"HEROESLEAGUE - バインド登録")#タイトル
-    # root.geometry("400x300")#ウィンドウサイズ
-    # label = tk.Label(root, text="登録する言葉")  # ラベルを作成
-    # label.pack()    # 実際に表示する
-    # button = tk.Button(root, text="録音", command=print("録音")) #ボタンを追加
-    
-    
-    # txtBox = tk.Entry()
-    # txtBox.configure(state='readonly', width=50)
-    # txtBox.pack()
-    # button.pack()#ボタン表示
-    
-    
-    # label1 = tk.Label(root, text="登録する操作")  # ラベルを作成
-    # label1.pack()    # 実際に表示する
-
-    # txtBox1 = tk.Entry()
-    # txtBox1.configure(state='normal', width=50)
-    # txtBox1.pack()
-    # button1 = tk.Button(root, text="登録", command=print("登録"), width=50) #ボタンを追加
-
-    # button1.pack()#ボタン表示
-    
-
-    # root.mainloop()#ウインドウ表示
-    
-    
-# addGUI.addBind()
 #設定
 recognition()
 setmode(loginUserdata)

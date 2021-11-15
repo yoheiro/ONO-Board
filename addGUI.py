@@ -42,11 +42,11 @@ def addBind(loginUserdata,currentmode):
         newBind = {txtBox_rec.get(): addList}
         print(newBind)
         loginUserdata['mode'][currentmode].update(newBind)
-        print(loginUserdata['mode'][currentmode])
         print("登録完了")
-        root.quit()
+        
         global addeddata
         addeddata = loginUserdata
+        root.destroy()
         
         
     
