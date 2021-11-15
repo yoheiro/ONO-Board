@@ -16,13 +16,16 @@ pyautogui
 tkinter
 
 # How To install
+## windows User
 https://drive.google.com/drive/folders/1BE0vC6DhTQsoLjsTalNQvQSDJ9yBX9Zo?usp=sharing
 
 １、上記のファイルをダウンロード
 
 ２、ono.exeを実行
 
-２’、macユーザ、Windowsユーザで動かなかった人は上記のライブラリをPIP　installしてono.oyを実行
+## Mac,Linux,もしくはwindowsで動かなかった人
+
+１、上記のライブラリをPIP　installしてono.oyを実行
 
 # How TO USE
 
