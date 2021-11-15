@@ -6,7 +6,7 @@ import addGUI
 
 
 user_data = [{'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{'hotkey':['ctrl','c']},{'write':'hallow'}],
-                                                    'じゃばじゃば':[{'press':['win']}]},
+                                                    'ジャバジャバ':[{'write':'    public static void main(String[] args) {'},{'press':'enter'},{'write':'     System.out.println("Hello World");  }'}]},
                                     'デスクトップ':{'ペタペタ':[],
                                                     'じゃばじゃば':[]
                                                     }
@@ -28,7 +28,7 @@ user_data = [{'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{
             ]
         #ログイン後取得予定データの例
 loginUserdata={'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{'hotkey':['ctrl','c']},{'write':'hallow'}],
-                                                    'じゃばじゃば':[{'press':['win']}]},
+                                                    'ジャバジャバ':[{'write':'    public static void main(String[] args) {'},{'press':'enter'},{'write':'     System.out.println("Hello World"); '},{'press':'enter'},{'write':'    }'}]},
                                     'デスクトップ':{'ペタペタ':[],
                                                     'じゃばじゃば':[]
                                                     }
@@ -51,7 +51,7 @@ def recognition():#音声認識スタート
             # Google Web Speech APIで音声認識
             text = r.recognize_google(audio, language="ja-JP")
         except sr.UnknownValueError:
-            print("Google Web Speech APIは音声を認識できませんでした。")
+            print("敵は一人...お前も一人。何を畏れる必要がある・・・恐怖を捨てろ・・・前を見ろ・・・進め・・・決して立ち止まるな・・・！もう一度だ..")
         except sr.RequestError as e:
             print("GoogleWeb Speech APIに音声認識を要求できませんでした;"
                 " {0}".format(e))
@@ -77,6 +77,7 @@ mode1 =user_data[0]['mode']['プログラミング']
 list =[{'hotkey':['ctrl','c']},{'write':'hallow'}]
 
 def setmode(loginUserdata):
+    
     while True:
         r = sr.Recognizer()
         with sr.Microphone() as source:
@@ -87,7 +88,7 @@ def setmode(loginUserdata):
             # Google Web Speech APIで音声認識
             text = r.recognize_google(audio, language="ja-JP")
         except sr.UnknownValueError:
-            print("Google Web Speech APIは音声を認識できませんでした。")
+            print("敵は一人...お前も一人。何を畏れる必要がある・・・恐怖を捨てろ・・・前を見ろ・・・進め・・・決して立ち止まるな・・・！もう一度だ..")
         except sr.RequestError as e:
             print("GoogleWeb Speech APIに音声認識を要求できませんでした;"
                 " {0}".format(e))
@@ -100,8 +101,10 @@ def setmode(loginUserdata):
                currentBind = loginUserdata['mode'][currentmode]
                print(currentBind)
                break
-            elif text == "モード登録":
-                addMode()
+            elif text == "モード 登録":
+                
+                loginUserdata = addGUI.addMode(loginUserdata)
+                print(loginUserdata)
             else :
                 print("もう一度だ...")
 
@@ -121,7 +124,7 @@ def BindLisner(User,mode):
             # Google Web Speech APIで音声認識
             text = r.recognize_google(audio, language="ja-JP")
         except sr.UnknownValueError:
-            print("Google Web Speech APIは音声を認識できませんでした。")
+            print("敵は一人...お前も一人。何を畏れる必要がある・・・恐怖を捨てろ・・・前を見ろ・・・進め・・・決して立ち止まるな・・・！もう一度だ..")
         except sr.RequestError as e:
             print("GoogleWeb Speech APIに音声認識を要求できませんでした;"
                 " {0}".format(e))
@@ -142,8 +145,9 @@ def BindLisner(User,mode):
                 currentmode="default"
                 currentBind = None
                 setmode(loginUserdata)
-            elif text == "オノマトペ登録":
-                addGUI.addBind()
+            elif text == "オノマトペ 登録":
+                loginUserdata = addGUI.addBind(loginUserdata,currentmode)
+                currentBind = loginUserdata['mode'][currentmode]
             elif text in currentBind:
                 setOnomatope(currentBind,text)
             print(currentBind.keys())
@@ -165,51 +169,40 @@ def keyPushFunc(listx):
 
 
 
-def addMode():
-    print("モード登録")
-    root = tk.Tk()
-    root.title(u"HEROESLEAGUE - モード登録")#タイトル
-    root.geometry("400x300")#ウィンドウサイズ
-    label = tk.Label(root, text="登録するモード名")  # ラベルを作成
-    label.pack()                           # 実際に表示する
-    button = tk.Button(root, text="登録", command=print("aaa")) #ボタンを追加
 
-    button.pack()#ボタン表示
-
-    root.mainloop()#ウインドウ表示
     
 # def addBind():
     
-    print("バインド登録")
-    root = tk.Tk()
-    root.title(u"HEROESLEAGUE - バインド登録")#タイトル
-    root.geometry("400x300")#ウィンドウサイズ
-    label = tk.Label(root, text="登録する言葉")  # ラベルを作成
-    label.pack()    # 実際に表示する
-    button = tk.Button(root, text="録音", command=print("録音")) #ボタンを追加
+    # print("バインド登録")
+    # root = tk.Tk()
+    # root.title(u"HEROESLEAGUE - バインド登録")#タイトル
+    # root.geometry("400x300")#ウィンドウサイズ
+    # label = tk.Label(root, text="登録する言葉")  # ラベルを作成
+    # label.pack()    # 実際に表示する
+    # button = tk.Button(root, text="録音", command=print("録音")) #ボタンを追加
     
     
-    txtBox = tk.Entry()
-    txtBox.configure(state='readonly', width=50)
-    txtBox.pack()
-    button.pack()#ボタン表示
+    # txtBox = tk.Entry()
+    # txtBox.configure(state='readonly', width=50)
+    # txtBox.pack()
+    # button.pack()#ボタン表示
     
     
-    label1 = tk.Label(root, text="登録する操作")  # ラベルを作成
-    label1.pack()    # 実際に表示する
+    # label1 = tk.Label(root, text="登録する操作")  # ラベルを作成
+    # label1.pack()    # 実際に表示する
 
-    txtBox1 = tk.Entry()
-    txtBox1.configure(state='normal', width=50)
-    txtBox1.pack()
-    button1 = tk.Button(root, text="登録", command=print("登録"), width=50) #ボタンを追加
+    # txtBox1 = tk.Entry()
+    # txtBox1.configure(state='normal', width=50)
+    # txtBox1.pack()
+    # button1 = tk.Button(root, text="登録", command=print("登録"), width=50) #ボタンを追加
 
-    button1.pack()#ボタン表示
+    # button1.pack()#ボタン表示
     
 
-    root.mainloop()#ウインドウ表示
+    # root.mainloop()#ウインドウ表示
     
     
-addGUI.addBind()
+# addGUI.addBind()
 #設定
 recognition()
 setmode(loginUserdata)

@@ -1,16 +1,60 @@
+# import sys
+# from cx_Freeze import setup, Executable
+ 
+# base = None
+ 
+# if sys.platform == 'win32':
+#     base = 'Win32GUI'
+# # CUIの場合はこのif文をコメントアウトしてください。
+ 
+# exe = Executable(script = "ono.py", base= base)
+# # "main.py"にはpygameを用いて作成したファイルの名前を入れてください。
+ 
+# setup(name = 'your_filename',
+#     version = '0.1',
+#     description = 'converter',
+#     executables = [exe])
+
 import sys
 from cx_Freeze import setup, Executable
  
 base = None
  
-if sys.platform == 'win32':
-    base = 'Win32GUI'
-# CUIの場合はこのif文をコメントアウトしてください。
+# if sys.platform == 'win32':
+#     base = 'Win32GUI'
  
-exe = Executable(script = "ono.py", base= base)
-# "main.py"にはpygameを用いて作成したファイルの名前を入れてください。
+executables = [
+   Executable('ono.py', base=base)
+]
  
-setup(name = 'your_filename',
-    version = '0.1',
-    description = 'converter',
-    executables = [exe])
+# appにパッケージ化するときのInfo.plistを指定する
+bdist_mac_options = {
+    'custom_info_plist': 'Info.plist',
+}
+ 
+setup(name='oui',
+      version='0.1',
+      description='oui',
+      options={
+          'bdist_mac': bdist_mac_options # ここでbdist_macコマンド時のオプションとして適用する
+      },
+      executables=executables)
+
+# import cx_Freeze
+
+# executables = [cx_Freeze.Executable("voiceToText.py")]
+
+# import speech_recognition as sr
+# from os import path
+# base_path = path.dirname(path.abspath(sr.__file__))
+
+# cx_Freeze.setup(
+#     name="Sing it-Hear it",
+#     options={
+#         "build_exe": {
+#             "packages":["speech_recognition", "pyaudio"],
+#             "include_files": [path.join(base_path, "flac-win32.exe"), path.join(base_path, "flac-mac"), path.join(base_path, "flac-linux-x86"), path.join(base_path, "flac-linux-x86_64")],
+#         }
+#     },
+#     executables = executables
+# )
