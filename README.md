@@ -15,17 +15,19 @@ pyautogui
 
 tkinter
 
-# How To Use
+# How To install
 https://drive.google.com/drive/folders/1BE0vC6DhTQsoLjsTalNQvQSDJ9yBX9Zo?usp=sharing
 
 １、上記のファイルをダウンロード
 
 ２、ono.exeを実行
 
-２’、macもしくはWindowsで動かなければ上記のライブラリをPIP　installしてono.oyを実行
+２’、macユーザ、Windowsユーザで動かなかった人は上記のライブラリをPIP　installしてono.oyを実行
 
-３、ユーザー名を言う（現在、”高木”のみ使用可能）
+#How TO USE
 
-４、既存のモードを言うことでキーマッピングを選ぶもしくは”モード登録”といい、その後モード名を言うことで新しいモード登録
+１、ユーザー名を言う（現在、”高木”のみ使用可能）
 
-５、登録したオノマトペを言うもしくは”オノマトペ登録”でキーマッピングを追加、実行する。
+２、既存のモードを言うことでキーマッピングを選ぶもしくは”モード登録”といい、その後モード名を言うことで新しいモード登録
+
+３、登録したオノマトペを言うもしくは”オノマトペ登録”でキーマッピングを追加、実行する。
