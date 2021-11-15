@@ -44,6 +44,10 @@ def addBind(loginUserdata,currentmode):
         loginUserdata['mode'][currentmode].update(newBind)
         print(loginUserdata['mode'][currentmode])
         print("登録完了")
+        root.quit()
+        global addeddata
+        addeddata = loginUserdata
+        
         
     
     def changedata():#音声認識をして文字を書き換える関数
@@ -163,6 +167,7 @@ def addBind(loginUserdata,currentmode):
     btn_register.place(x=800,y=450)#操作登録ボタン表示
 
     root.mainloop()#ウインドウ表示
+    return addeddata
 
 
 def addMode(loginUserdata):

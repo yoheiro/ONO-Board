@@ -114,6 +114,7 @@ def BindLisner(User,mode):
     global currentUser
     global currentmode
     global currentBind
+    global loginUserdata
     while True:
         r = sr.Recognizer()
         with sr.Microphone() as source:
@@ -146,7 +147,9 @@ def BindLisner(User,mode):
                 currentBind = None
                 setmode(loginUserdata)
             elif text == "オノマトペ 登録":
-                loginUserdata = addGUI.addBind(loginUserdata,currentmode)
+                loginUserData=loginUserdata
+                loginUserdata = addGUI.addBind(loginUserData,currentmode)
+                print(loginUserdata)
                 currentBind = loginUserdata['mode'][currentmode]
             elif text in currentBind:
                 setOnomatope(currentBind,text)
