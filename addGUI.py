@@ -79,6 +79,7 @@ def addBind():
                 
                 autoFillSet['write'] = txt
                 addList.append(autoFillSet)
+                
                 print(addList)
                 
             label_op1 = tk.Label(root, text="\n自動入力させたい文字列を入力してください")
@@ -148,6 +149,10 @@ def addBind():
 
     op1.pack()
     op2.pack()
+    
+    list_var = tk.StringVar(value=addList) #addListの表示
+    listbox = tk.Listbox(root, height=3, listvariable=list_var)
+    listbox.pack() 
 
     btn_ope = tk.Button(root, text="選択",width=15,command=op_check) 
     btn_ope.pack()#操作選択ボタン表示
