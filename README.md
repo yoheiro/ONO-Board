@@ -12,16 +12,17 @@ speechrecognition
 pyaudio
 pyautogui
 
-slenium
-requests
-//tkinter
+
+tkinter
 
 # How To Use
 https://drive.google.com/drive/folders/1BE0vC6DhTQsoLjsTalNQvQSDJ9yBX9Zo?usp=sharing
 
 １、上記のファイルをダウンロード
 
-２，ono.exeを実行
+２、ono.exeを実行
+
+２’、macもしくはWindowsで動かなければ上記のライブラリをPIP　installしてono.oyを実行
 
 ３、ユーザー名を言う（現在、”高木”のみ使用可能）
 
