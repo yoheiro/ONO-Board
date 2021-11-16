@@ -31,13 +31,13 @@ executables = [
 bdist_mac_options = {
     'custom_info_plist': 'Info.plist',
 }
- 
-setup(name='oui',
+includes = [] 
+include_files = ['DB'] 
+setup(name='ono',
       version='0.1',
-      description='oui',
-      options={
-          'bdist_mac': bdist_mac_options # ここでbdist_macコマンド時のオプションとして適用する
-      },
+      description='ono',
+      options={'build_exe': {'includes': includes, 'include_files': include_files}},
+
       executables=executables)
 
 # import cx_Freeze

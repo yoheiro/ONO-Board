@@ -9,11 +9,11 @@ import pickle
 
 
 def saveCSV(saveData):
-    with open('data.json', 'wb') as fp:
+    with open('DB/data.json', 'wb') as fp:
         pickle.dump(saveData, fp)
     
 def loadCSV():
-    with open('data.json', 'rb') as fp:
+    with open('DB/data.json', 'rb') as fp:
         newdata = pickle.load(fp)
     return newdata
 user_data = [{'Name':'髙木','mode':{'プログラミング':{'ペタペタ':[{'hotkey':['ctrl','c']},{'write':'hallow'}],
